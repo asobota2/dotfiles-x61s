@@ -1,0 +1,165 @@
+app-arch/cpio			-nls
+app-arch/libarchive		-acl -bzip2 -e2fsprogs -iconv -lzma -xattr
+app-arch/tar			 minimal -acl -nls -xattr
+app-arch/unzip			-bzip2
+app-arch/xz-utils		-extra-filters -nls
+#       /zstd			 threads - enables threading
+
+#        /gnupg			 ssl    - is required by sys-apps/portage
+app-crypt/gnupg			-bzip2 -nls -readline -smartcard
+#        /libb2			 openmp - builds support for multiprocessing
+app-crypt/pinentry		-ncurses
+app-crypt/rhash			-nls -ssl
+
+#          /vim			 X       - required for title in x11-wm/dwm
+#          /vim			-minimal - disables a lot of functionality
+app-editors/vim			 X -acl -crypt -nls
+#          /vim-core		-minimal - disables syntax highlighting thus it's disabled
+app-editors/vim-core		-acl -nls
+
+app-misc/pax-utils		-man -seccomp
+
+app-portage/gemato		-gpg
+
+app-shells/bash			-net -nls
+
+dev-lang/perl			 minimal -gdbm
+#       /python			 ssl - required by sys-apps/portage
+#       /python			 xml - required by dev-python/setuptools, media-libs/libepoxy, x11-libs/libxcb
+dev-lang/python			 lto pgo -ensurepip -gdbm -ncurses -readline -sqlite
+
+dev-libs/elfutils		-bzip2 -nls -utils
+dev-libs/expat			-unicode
+#       /gmp			 asm - enables assembly optimizations
+dev-libs/gmp			-cpudetection -cxx
+#       /libgcrypt		 asm - enables assembly optimizations
+#       /libgcrypt		 getentropy - simplifies the entropy gatherer
+dev-libs/libgpg-error		-nls
+dev-libs/libnl			-debug
+#       /libpcre2		 jit - enabled for improved performance
+dev-libs/libpcre2		-bzip2 -pcre16 -readline -unicode -zlib
+dev-libs/libxml2		-ftp -python -readline
+dev-libs/libxslt		-crypt
+#       /nettle			 asm - enables assembly optimizations
+#       /nettle			 gmp - required by net-libs/gnutls
+dev-libs/popt			-nls
+#       /openssl		 asm - enables assembly optimizations
+
+#dev-python/pydantic		 native-extensions - speedups, using C instead of fallback Python
+
+dev-util/cmake			-ncurses
+
+#      /git			 blksha1 - optimized sha1 implementation
+#      /git			 curl    - is needed to push to remote repos via http/https
+dev-vcs/git			-gpg -iconv -nls -pcre -perl -safe-directory -webdav
+
+media-fonts/jetbrains-mono	-X
+media-fonts/liberation-fonts	-X
+
+media-libs/freetype		-X -adobe-cff -bzip2 -cleartype-hinting -png
+#         /libepoxy		 X   - required by x11-base/xorg-server
+#         /libepoxy		 egl - required by x11-base/xorg-server
+#         /libglvnd		 X   - required by x11-base/xorg-server, media-libs/mesa
+media-libs/libglvnd		 X
+#         /mesa			 X   - required by x11-base/xorg-server
+media-libs/mesa			-gles2 -llvm -proprietary-codecs -zstd
+
+net-libs/gnutls			-cxx -idn -nls -openssl -seccomp -tls-heartbeat -zlib
+
+#       /curl			 adns - support for asynchronous DNS resolution
+#       /curl			 ssl  - required by dev-util/cmake
+net-misc/curl			-ftp -http2 -imap -ipv6 -openssl -pop3 -progress-meter -smtp -tftp
+net-misc/iputils		-arping -filecaps -nls
+net-misc/openssh		-X -pam -pie -scp -ssl
+net-misc/rsync			-acl -iconv -ipv6 -ssl -xattr
+net-misc/wget			-ipv6 -nls -pcre -zlib
+
+net-wireless/wpa_supplicant	-crda -fils -hs2-0 -mbo -mesh -readline
+
+sys-apps/coreutils		-acl -nls -openssl -xattr
+#       /debianutils		 install-kernel - required for 'make install'
+sys-apps/diffutils		-nls
+sys-apps/file			-bzip2 -seccomp -zlib
+sys-apps/findutils		-nls
+sys-apps/gawk			-nls -readline
+sys-apps/grep			-egrep-fgrep -nls -pcre
+sys-apps/groff			-X
+sys-apps/help2man		-nls
+sys-apps/iproute2		 minimal -iptables -ipv6
+sys-apps/kbd			-nls -pam
+sys-apps/less			-pcre -unicode
+#       /man-db			 manpager - required for reading manpages
+sys-apps/man-db			-nls -seccomp -zlib
+#       /net-tools		 hostname - required for hostname
+sys-apps/net-tools		-arp -ipv6 -nls
+#       /openrc			 netifrc  - required for networking on boot
+sys-apps/openrc			-ncurses -pam -unicode
+#       /portage		 native-extensions - recommended to be left enabled
+#       /portage		 rsync-verify      - enables full-tree cryptographic verification of the gentoo repository
+sys-apps/portage		-xattr
+sys-apps/sandbox		-nnp
+sys-apps/sed			-acl -nls
+sys-apps/shadow			-acl -nls -pam -xattr
+#       /systemd-utils		 tmpfiles    - required by virtual/tmpfiles
+#       /systemd-utils		 udev        - required by udev
+sys-apps/systemd-utils		-acl -kmod
+#       /texinfo		 standalone  - builts a version surviving Portage bugs
+sys-apps/texinfo		-nls
+#       /util-linux		 hardlink    - an useful utility
+sys-apps/util-linux		-cramfs -logger -ncurses -nls -pam -readline -su -suid
+
+sys-boot/grub			-fonts -nls -themes
+
+sys-devel/bc			-readline
+sys-devel/binutils		 pgo -gold -nls -plugins
+sys-devel/bison			-nls
+sys-devel/flex			-nls
+#        /gcc			 nptl   - a threading module
+#        /gcc			 openmp - builds support for multiprocessing
+sys-devel/gcc			 lto pgo -fortran -nls -sanitize -ssp
+#        /gettext		 openmp - builds support for multiprocessing
+sys-devel/gettext		-acl -cxx -ncurses -nls
+sys-devel/m4			-nls
+sys-devel/make			-nls
+sys-devel/patch			-xattr
+
+#     /e2fsprogs		 threads - enables threading
+#     /e2fsprogs		 tools   - required for fs-check on boot
+sys-fs/e2fsprogs		 lto -nls
+
+#         /linux-firmware	 redistributionale - required for wireless card firmware
+sys-kernel/linux-firmware	 savedconfig
+
+sys-libs/gdbm			-berkdb -nls -readline
+#       /glibc			 clone3  - may be disabled for compatibility
+sys-libs/glibc			-multiarch -ssp
+sys-libs/libcap			-pam
+#       /ncurses		-minimal - prevents many things from displaying properly
+sys-libs/ncurses		-cxx
+sys-libs/timezone-data		-nls
+
+#          /procps		 kill    - an useful utility
+#          /procps		 ncurses - required by some utilities (e.g. top)
+sys-process/procps		-nls
+sys-process/psmisc		-X -ipv6 -nls
+
+virtual/ssh			 minimal
+
+#       /xorg-server		-minimal - contradicts xorg use flag, required to build an X server
+#       /xorg-server		 udev    - required by xorg-drivers (libinput)
+x11-base/xorg-server		-elogind udev xorg
+x11-libs/libICE			-ipv6
+x11-libs/libSM			-ipv6 -uuid
+x11-libs/libX11			-ipv6
+x11-libs/libXfont2		-bzip2 -ipv6
+x11-libs/libXmu			-ipv6
+x11-libs/libpciaccess		-zlib
+x11-libs/libxcb			-xkb
+x11-terms/st			 savedconfig
+x11-wm/dwm			 savedconfig
+
+# known errors:
+# on emerge --sync
+# refreshing keys via WKD always fails [!!]
+#
+# problems on 'reboot' and 'shutdown'

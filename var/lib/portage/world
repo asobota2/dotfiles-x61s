@@ -1,0 +1,11 @@
+app-editors/vim
+dev-embedded/stm32flash
+dev-vcs/git
+media-fonts/jetbrains-mono
+net-wireless/wpa_supplicant
+sys-boot/lilo
+sys-kernel/gentoo-sources
+sys-kernel/linux-firmware
+x11-base/xorg-server
+x11-terms/st
+x11-wm/dwm
