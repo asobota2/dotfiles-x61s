@@ -49,6 +49,8 @@ sys-apps/systemd-utils		tmpfiles udev		# tmpfiles		- required by virtual/tmpfile
 sys-apps/texinfo		standalone		# standalone		- builds a version surviving portage bugs
 sys-apps/util-linux		hardlink		# hardlink		- required to create hard links
 
+sys-boot/lilo			minimal
+
 sys-devel/binutils		pgo
 sys-devel/gcc			lto nptl openmp pgo	# openmp		- required by app-cryps/libb2
 sys-devel/gettext		openmp
