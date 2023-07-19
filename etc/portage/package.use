@@ -33,6 +33,7 @@ dev-vcs/git			blksha1 curl		# blksha1		- optimized sha1 implementation
 media-libs/libepoxy		X egl			# X			- required by x11-base/xorg-server
 							# egl			- required by x11-base/xorg-server
 media-libs/libglvnd		X			# X			- required by x11-base/xorg-server and media-libs/mesa
+media-libs/mesa			X			# X			- required by x11-base/xorg-server
 
 net-misc/curl			adns ssl		# adns			- asynchronous DNS resolution
 							# ssl			- required for the http/https protocols to work
