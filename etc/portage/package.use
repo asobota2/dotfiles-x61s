@@ -9,6 +9,7 @@ app-alternatives/tar		gnu
 app-alternatives/yacc		bison
 
 app-arch/tar			minimal
+app-arch/xz-utils		pgo
 
 app-crypt/gnupg			ssl			# ssl			- required by sys-apps/portage
 app-crypt/libb2			openmp
@@ -35,8 +36,9 @@ media-libs/libepoxy		X egl			# X			- required by x11-base/xorg-server
 media-libs/libglvnd		X			# X			- required by x11-base/xorg-server and media-libs/mesa
 media-libs/mesa			X			# X			- required by x11-base/xorg-server
 
-net-misc/curl			adns ssl		# adns			- asynchronous DNS resolution
+net-misc/curl			adns openssl ssl	# adns			- asynchronous DNS resolution
 							# ssl			- required for the http/https protocols to work
+							# openssl		- required
 
 sys-apps/debianutils		installkernel		# installkernel		- required for 'make install'
 sys-apps/iproute2		minimal
