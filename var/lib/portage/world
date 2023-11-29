@@ -1,5 +1,6 @@
 app-editors/vim
 dev-embedded/stm32flash
+dev-python/pyserial
 dev-vcs/git
 media-fonts/jetbrains-mono
 net-wireless/wpa_supplicant
